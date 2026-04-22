@@ -4,8 +4,9 @@
                         <meta charset="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta name="generator" content="Pelican" />
-                        <title>Pintasart</title>
+                        <title>Agruras de automatizar a publicação da minha página</title>
                         <link rel="stylesheet" href="https://pintasart.github.io/theme/css/main.css" />
+    <meta name="description" content="Da ideia nobre ao 403 dramático — e como no fim tudo faz sentido (quase)." />
         </head>
 
         <body id="index" class="home">
@@ -18,11 +19,16 @@
                                         <li><a href="/contactos/">Contactos</a></li>
                         </ul></nav>
                 </header><!-- /#banner -->
+  <section id="content" class="body">
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="https://pintasart.github.io/nerd/2026/04/21/agruras-de-automatizar-a-publicacao-da-minha-pagina/" rel="bookmark"
+             title="Permalink to Agruras de automatizar a publicação da minha página">Agruras de automatizar a publicação da minha página</a></h1>
+      </header>
 
-                <aside id="featured" class="body">
-                    <article>
-                        <h1 class="entry-title"><a href="https://pintasart.github.io/nerd/2026/04/21/agruras-de-automatizar-a-publicacao-da-minha-pagina/">Agruras de automatizar a publicação da minha página</a></h1>
-                        <p>Spoiler: no fim funciona. Mas entre o “vou só meter isto no GitHub Actions” e o primeiro deploy feliz, passei por mais plot twists do que numa novela das nove.</p>
+      <div class="entry-content">
+        <p>Spoiler: no fim funciona. Mas entre o “vou só meter isto no GitHub Actions” e o primeiro deploy feliz, passei por mais plot twists do que numa novela das nove.</p>
 <h2>Acto I — “Isto é só um script”</h2>
 <p>Tenho um site em Pelican. Gera HTML bonitinho, o <code>make publish</code> faz o que tem a fazer, e eu pensava que o pior já tinha passado quando o Pelican deixou de reclamar dos plugins. Engano. O universo guardou os boss fights para a fase CI/CD.</p>
 <p>A primeira humildade foi <strong>humilde mesmo</strong>: links no menu que apontavam para <code>/sobremim/</code> quando o Pelican, educadamente, tinha gerado <code>/sobre-mim/</code>. O Pelican não discute contigo — faz <em>slugify</em> e pronto. Eu é que estava a mandar o browser para uma página que tecnicamente só existia na minha cabeça. Clica, 404, drama existencial.</p>
@@ -52,7 +58,8 @@
 <li><strong>URLs no menu</strong> = conferem com o que sai em <code>output/</code>; o Pelican é o juiz.</li>
 </ul>
 <p>E pronto. Automatizei. Ri. Chorei. Voltei a rir. Agora escrevo isto para que, da próxima vez, o erro seja novo — porque repetir o mesmo 403 já não tem piada nenhuma.</p>
-<p>Até à próxima agrura.</p><footer class="post-info">
+<p>Até à próxima agrura.</p>
+<footer class="post-info">
         <abbr class="published" title="2026-04-21T20:00:00+01:00">
                 Publicado: 21 April 2026
         </abbr>
@@ -62,36 +69,10 @@
                 </address>
         <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> -->
         
-</footer><!-- /.post-info -->                    </article>
-                </aside><!-- /#featured -->
-                    <section id="content" class="body">
-                        <h1>Other articles</h1>
-                        <hr />
-                        <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->      </div><!-- /.entry-content -->
 
-                <li><article class="hentry">
-                    <header>
-                        <h1><a href="https://pintasart.github.io/nerd/2026/04/19/o-primeiro-post/" rel="bookmark"
-                               title="Permalink to O primeiro post.">O primeiro post.</a></h1>
-                    </header>
-
-                    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2026-04-19T23:00:00+01:00">
-                Publicado: 19 April 2026
-        </abbr>
-
-        <!--                 <address class="vcard author">
-                        Por:                                 <a class="url fn" href="https://pintasart.github.io/author/pintasart.html">Pintasart</a>
-                </address>
-        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> -->
-        
-</footer><!-- /.post-info -->                        <p>Como qualquer primeiro post, não há-de ter grande conteúdo.</p>
-                        <a class="readmore" href="https://pintasart.github.io/nerd/2026/04/19/o-primeiro-post/">read more</a>
-                    </div><!-- /.entry-content -->
-                </article></li>
-                    </ol><!-- /#posts-list -->
-                    </section><!-- /#content -->
+    </article>
+  </section>
 
         </body>
 </html>

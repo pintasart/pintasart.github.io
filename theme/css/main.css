@@ -433,12 +433,36 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #posts-list {list-style: none; margin: 0;}
 #posts-list .hentry {padding-left: 10px; position: relative;}
 
-#posts-list footer {
-    left: 10px;
-    position: relative;
-    float: left;
-    top: 0.5em;
-    max-width: 190px;
+/* Resumo em cima, metadados por baixo (sem coluna lateral com float) */
+#posts-list .entry-content {
+	display: flex;
+	flex-direction: column;
+}
+#posts-list .entry-content > footer.post-info {
+	order: 2;
+	float: none;
+	clear: both;
+	position: static;
+	left: auto;
+	top: auto;
+	max-width: none;
+	width: auto;
+	margin: 1em 0 0;
+	margin-left: auto;
+	align-self: flex-end;
+	text-align: right;
+}
+
+/* Artigo principal (destaque na home) e página de artigo: metadados no fim do texto, à direita */
+#featured article > footer.post-info,
+section#content > article > .entry-content > footer.post-info {
+	float: none;
+	clear: both;
+	display: block;
+	width: 100%;
+	text-align: right;
+	margin: 1.5em 0 0;
+	padding: 0;
 }
 
 	/* About the Author */
