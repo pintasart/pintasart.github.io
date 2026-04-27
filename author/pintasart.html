@@ -19,22 +19,76 @@
                         </ul></nav>
                 </header><!-- /#banner -->
 
-                <aside id="featured" class="body">
-                    <article>
-                        <h1 class="entry-title"><a href="https://pintasart.github.io/nerd/2026/04/23/vibecoding/">Vibecoding</a></h1>
-                        <p>Há quem diga que <strong>vibecoding</strong> é programar sem saber programar. Há quem diga que é programar <em>com</em> saber, mas deixando a ansiedade em pausa e confiando no fluxo. Há quem diga que é só mais uma palavra para vender subscrições. Eu digo: <strong>são provavelmente as três coisas ao mesmo tempo</strong>, o que, filosoficamente, é bonito e, logisticamente, pode sair uns cobres do bolso.</p>
-<p>O ponto comum é este: aparece uma ideia, abres o portátil, e em vez de abrires <em>um</em> sítio onde trabalhas, abres <strong>um ecossistema</strong>. O Lovable propõe-te um protótipo antes de terminares o café. O v0 finge que o teu <em>layout</em> nasceu já vestido de domingo. O Windsurf sugere que navegar por ficheiros está ultrapassado e é coisa do outro século. O Cursor — sim, este onde eu estou a escrever isto com ar de quem sabe o que faz — transforma o editor numa sala de orquestra onde metade dos músicos são modelos de linguagem e a outra metade és tu, a fingir que és o maestro.</p>
-<p>E depois há a <strong>galeria dos LLMs</strong>, cada um com a sua personalidade de <em>influencer</em> técnico: o Gemini com a Google a empurrar integrações como quem oferece doces na entrada do supermercado; o Grok com cheiro a timeline e piada rápida; o DeepSeek a lembrar que o mundo não gira só em volta da costa Oeste; o Claude a escrever parágrafos que parecem ter feito <em>mindfulness</em> antes de responder. E no meio disto tudo, tu, com <strong>trinta separadores abertos</strong> e a sensação de que o relógio acelerou só para te irritar.</p>
-<h2>A parte séria disfarçada de piada</h2>
-<p>Não há tabela mágica que diga “para o teu tipo de cérebro e orçamento mensal, usa X”. O mercado mudou <strong>entre a frase anterior e esta</strong>. Qualquer comparação que eu escreva aqui envelhece ao ritmo a que o Trump fala. Por isso a recomendação que sobrevive ao sarcasmo é banal e verdadeira: <strong>experimenta</strong>. Uma semana no Lovable a ver se gostas de pensar em <em>produto</em> em vez de em <em>import</em>. Uma tarde no v0 a perceber se o teu gosto visual sobrevive ao <em>auto-layout</em>. Um projeto pequeno no Cursor ou no Windsurf para sentires se preferes o assistente “ao lado” ou “dentro” do teu ritmo de escrita.</p>
-<p>Os modelos por trás — Gemini, Grok, DeepSeek, Claude, e a lista que já está desatualizada enquanto lês isto — <strong>não são religiões</strong>. São fornecedores de completamentos estatísticos com marketing agressivo. Trocar de um para o outro é menos “traição ideológica” e mais “mudar de supermercado porque desta vez tens lugar de estacionamento”.</p>
-<h2>A imensidão e a velocidade (e o mundo não pede autorização)</h2>
-<p>O que me parece mais cansativo não é aprender <em>uma</em> ferramenta. É aprender <strong>a sensação permanente de estar atrasado</strong>. Sai um <em>feature drop</em>, entra um <em>pricing tier</em>, muda um <em>context window</em>, e tu ainda estavas a terminar o tutorial do mês passado. É como tentar acompanhar o autocarro enquanto alguém te atira folhetos pela janela: cada folheto promete que <em>este</em> é o último que vais precisar.</p>
-<p>Neste cenário, o vibecoding até pode ser um <strong>antídoto humorístico</strong>: se não dá para dominar tudo, ao menos domina o teu nervosismo e escolhe um caminho durante o tempo que a tua agenda <em>real</em> permite — não a agenda que o <em>LinkedIn</em> finge que todos temos.</p>
-<h2>Conclusão para quem já está cansado só de ler o título</h2>
-<p>Escolher plataforma é, em grande parte, <strong>escolher fricção</strong>: a que irritação preferes pagar diariamente. E escolher LLM é, em grande parte, <strong>escolher voz</strong>: a cadência das sugestões, o tipo de erro que cada um comete com confiança. Não existe escolha perfeita — existe <strong>teste</strong>, <strong>descarte</strong> e o conforto mesquinho de saber que toda a gente está igualmente confusa, só que uns têm melhor <em>branding</em>.</p>
-<p>Eu sigo aqui, entre ferramentas e modelos, com a humildade de quem aceita que o próximo <em>release</em> pode tornar metade deste texto obsoleto. Pelo menos o sarcasmo mantém-se: <strong>o mundo continua mais rápido que nós</strong>, e nós continuamos a fingir que isso é um <em>bug</em> temporário.</p>
-<p>Até à próxima ferramenta indispensável.</p><footer class="post-info">
+                        <aside id="featured" class="body">
+                            <article>
+                                <h1 class="entry-title"><a href="https://pintasart.github.io/nerd/2026/04/26/do-chatgpt-ao-cursor-aprender-ia-num-projeto-django-de-2018/">Do ChatGPT ao Cursor: aprender IA num projeto Django de 2018</a></h1>
+                                <p>Há uma certa poesia perversa em usar as ferramentas de IA avançadas para trabalhar num projeto Django, construído em 2018, quando o React ainda prometia ser simples e o Docker era "o futuro".</p>
+<p>O projeto em questão: <em>Django 2 By Example</em>, o livro de Antonio Melé, publicado em 2018 com Django 2.1. Uma relíquia funcional com quatro projetos progressivos — blog, rede social, loja online, e-learning — e o charme atemporal de código que já viu muita coisa. O tipo de @codebase que existe há oito anos e quase que funciona, por inércia e por respeito mútuo.</p>
+<p>A missão: aprender a usar Claude Pro e Cursor Pro a partir deste projeto. Não começar do zero com um tutorial novo e reluzente. Começar com algo real, com bagagem, com as marcas que todo o legado acumula quando existe tempo suficiente.</p>
+<h2>O Plano</h2>
+<p>A ideia foi construir um guião de aprendizagem de forma incremental, passando pelas ferramentas de IA no navegador: primeiro o ChatGPT; com base nesse resultado, passei ao Gemini; de seguida ao Grok, ao Copilot, à Perplexity e, por fim, ao Claude. Cada ferramenta produziu uma versão melhorada, ou não, do guião. No fim, existia um "Plano de Aprendizagem V4 Django Edition" com tudo: modelo mental, setup passo a passo, cinco dias de exercícios, templates <code>.mdc</code> para o Cursor, estratégia de testes, tabela de troubleshooting e indicadores de evolução semana a semana.</p>
+<p>Um plano para aprender a usar IA, produzido com IA, para trabalhar num projeto feito antes de existir IA generativa decente.</p>
+<p>A recursividade é autossuficiente. Não tentei resistir-lhe.</p>
+<h2>O Modelo Mental</h2>
+<p>O que emergiu do processo é uma hierarquia clara:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Claude</span><span class="w"> </span><span class="ss">(</span><span class="nv">Arquiteto</span><span class="w"> </span><span class="nv">S</span>é<span class="nv">nior</span><span class="ss">)</span>
+<span class="w">        </span>↓
+<span class="nv">Regras</span><span class="w"> </span>.<span class="nv">mdc</span><span class="w"> </span><span class="ss">(</span><span class="nv">A</span><span class="w"> </span><span class="nv">Lei</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">Projeto</span><span class="ss">)</span>
+<span class="w">        </span>↓
+<span class="nv">Cursor</span><span class="w"> </span><span class="nv">em</span><span class="w"> </span><span class="nv">Agent</span><span class="w"> </span><span class="nv">Mode</span><span class="w"> </span><span class="ss">(</span><span class="nv">O</span><span class="w"> </span><span class="nv">Trabalhador</span><span class="w"> </span><span class="nv">Qualificado</span><span class="ss">)</span>
+<span class="w">        </span>↓
+<span class="nv">python</span><span class="w"> </span><span class="nv">manage</span>.<span class="nv">py</span><span class="w"> </span><span class="nv">check</span><span class="w"> </span><span class="ss">(</span><span class="nv">A</span><span class="w"> </span><span class="nv">Realidade</span><span class="w"> </span><span class="nv">Implac</span>á<span class="nv">vel</span><span class="ss">)</span>
+<span class="w">        </span>↓
+<span class="nv">Eu</span><span class="w"> </span><span class="ss">(</span><span class="nv">O</span><span class="w"> </span><span class="nv">Orquestrador</span><span class="w"> </span>—<span class="w"> </span><span class="nv">tomo</span><span class="w"> </span><span class="nv">caf</span>é<span class="w"> </span><span class="nv">enquanto</span><span class="w"> </span><span class="nv">o</span><span class="w"> </span><span class="nv">c</span>ó<span class="nv">digo</span><span class="w"> </span><span class="nv">se</span><span class="w"> </span><span class="nv">escreve</span><span class="ss">)</span>
+</code></pre></div>
+
+<p>A distinção é importante: o Claude não escreve código. O Claude pensa. Planeia arquitetura, identifica riscos antes das migrações correrem, revê diffs, detecta queries N+1 antes de chegarem à produção. O Cursor executa — e executa bem, desde que lhe dês regras claras e não o largues a improvisar sobre Django 2 sem o avisar que não é Django 5.</p>
+<p>Porque sim, o Cursor gera sintaxe Django 3+ num projeto Django 2 se não lhe disseres explicitamente o contrário. A primeira tentação é culpar a ferramenta. A segunda, mais honesta, é perceber que a ferramenta não adivinha contexto que não foi dado. É como pedir uma "bica" fora de Portugal e estranhar que não percebam.</p>
+<p>Daí os ficheiros <code>.mdc</code>, que consistem em regras que ficam na pasta <code>.cursor/rules/</code> e que funcionam como a constituição do projeto: o que existe, o que se pode fazer, o que nunca se deve fazer em circunstância alguma. No <code>core.mdc</code> do projeto, a proibição de features erradas ou que ficaram obsoletas está em maiúsculas, negrito, e com três exemplos do que não fazer. O Cursor leu. E respeitou.</p>
+<h2>A Sessão Real</h2>
+<p>Num fim-de-semana com o miudo doente, longe de outras crianças para a coisa não pegar, lá me agarrei ao computador. Já que andamos com ferramentas de IA, dei-me ao trabalho de ir registando cronológicamente (quase!!!) as atividades e tarefas feitas neste empreendimento de aprendizagem. O ficheiro "FitaTempo.txt" registou (quase) tudo. A sequência honesta foi esta:</p>
+<p><strong>No dia da Liberdade, pela hora do lanche</strong> — Cursor faz o levantamento inicial da codebase. Quantas apps, que responsabilidades, onde está a dívida técnica mais óbvia. Antes do jantar, já tinha o mapeamento completo do fluxo de compra do myshop: carrinho, encomenda, pagamento, cupões, integração com Celery. Análise que teria custado horas a fazer manualmente.</p>
+<p><strong>Pela noite dentro</strong> — Passa-se para o Claude, fora do Cursor. Aqui produziu-se o <code>CLAUDE.md</code> com a documentação do projeto e depois o <code>core.mdc</code> — as regras que garantem que o Cursor, nas sessões seguintes, sabe exatamente onde está e o que não deve tentar. Trabalho de arquitetura. Não de implementação.</p>
+<p><strong>Na manhã seguinte</strong> — O Cursor retoma. Refatoração das function-based views do blog para class-based views: <code>PostListView</code>, <code>PostDetailView</code>, <code>PostSearchView</code>. Atualização de todas as URLs para <code>.as_view()</code>. Verificação com <code>python manage.py check</code> após cada conversão. Depois auditoria de queries N+1 — identificação e correção com <code>select_related</code> e <code>prefetch_related</code> nas apps blog e shop.</p>
+<p><strong>Ao final da tarde, pós dia da Liberdade</strong> — O Claude reviu o diff da refatoração e identificou quatro problemas: uma regressão de PRG na <code>PostDetailView</code> (submeter o formulário e carregar F5 criava comentários duplicados), uma colisão de assinatura no <code>get_context_data()</code> com o protocolo interno das CBV, uma query extra no template, e um import perdido no admin do pagamento. Coisas que passam nos testes, falham na vida real.</p>
+<p>Nenhuma delas estava no ficheiro que o Cursor tinha modificado. Estavam nas consequências do que tinha modificado.</p>
+<h2>As Surpresas</h2>
+<p>Duas merecem registo.</p>
+<p><strong>Primeira:</strong> o Celery tinha um bug no projeto do livro. A task estava definida como <code>@task</code> quando deveria ser <code>@shared_task</code> — uma diferença de importação que faz a task funcionar isolada mas falhar quando o Celery está configurado como aplicação autónoma. O Cursor encontrou e corrigiu sem drama. Um livro de 2018 com um bug que a IA de 2026 detectou em segundos. Não sei se isto é reconfortante ou perturbador. Talvez as duas coisas.</p>
+<p><strong>Segunda:</strong> entre as sessões de Claude e Cursor, houve um interlúdio com o Google Search IA para questões operacionais — setup do PostgreSQL, gestão de branches no Git, configuração de SSH para o GitHub. O mesmo respondeu corretamente e sem hesitar.</p>
+<p>E há um detalhe final que não posso ignorar: a fita do tempo que construí foi o resultado de pedir a cada um deles — Claude, Cursor e Google Search com IA — para fazerem uma lista de perguntas e tarefas de toda a sessão de trabalho para escrever um artigo. Não vale a pena esconder que também pedi para escrever o artigo. Estás a ler o resultado (um pouco refinado por mim). Todos contribuíram e ninguém se queixou.</p>
+<h2>O que ficou</h2>
+<p>Ao fim de uma sessão de trabalho, o Django 2.1 de 2018 está melhor: views mais limpas, queries otimizadas, um bug de Celery corrigido, regras que garantem que a próxima sessão começa onde esta acabou.</p>
+<p>O workflow funciona. Não porque as ferramentas são mágicas — são muito boas, mas não são mágicas — mas porque a divisão de responsabilidades é clara. O Claude para pensar, o Cursor para executar e o <code>manage.py check</code> para dizer a verdade.</p>
+<p>O código que escreves manualmente, ao fim de tudo, é invariavelmente aquilo que ainda não sabias descrever à máquina. E isso, com alguma sorte, vai diminuindo.</p>
+<p>Não está perfeito, mas está muito mais fácil e melhor.</p><footer class="post-info">
+        <abbr class="published" title="2026-04-26T20:00:00+01:00">
+                Publicado: 26 April 2026
+        </abbr>
+
+        <!--                 <address class="vcard author">
+                        Por:                                 <a class="url fn" href="https://pintasart.github.io/author/pintasart.html">Pintasart</a>
+                </address>
+        -->
+        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> 
+<p>tags: <a href="https://pintasart.github.io/tag/ia/">IA</a> <a href="https://pintasart.github.io/tag/llms/">LLMS</a> </p>        
+</footer><!-- /.post-info -->                            </article>
+                        </aside><!-- /#featured -->
+                            <div id="page-wrapper">
+                                <div id="main-content">
+                            <section id="content" class="body">
+                                <h1>Other articles</h1>
+                                <hr />
+                                <ol id="posts-list" class="hfeed">
+
+                        <li><article class="hentry">
+                            <header>
+                                <h1><a href="https://pintasart.github.io/nerd/2026/04/23/vibecoding/" rel="bookmark"
+                                       title="Permalink to Vibecoding">Vibecoding</a></h1>
+                            </header>
+
+                            <div class="entry-content">
+<footer class="post-info">
         <abbr class="published" title="2026-04-23T18:00:00+01:00">
                 Publicado: 23 April 2026
         </abbr>
@@ -42,22 +96,21 @@
         <!--                 <address class="vcard author">
                         Por:                                 <a class="url fn" href="https://pintasart.github.io/author/pintasart.html">Pintasart</a>
                 </address>
-        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> -->
-        
-</footer><!-- /.post-info -->                    </article>
-                </aside><!-- /#featured -->
-                    <section id="content" class="body">
-                        <h1>Other articles</h1>
-                        <hr />
-                        <ol id="posts-list" class="hfeed">
+        -->
+        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> 
+<p>tags: <a href="https://pintasart.github.io/tag/ia/">IA</a> <a href="https://pintasart.github.io/tag/llms/">LLMS</a> </p>        
+</footer><!-- /.post-info -->                                <p>Sobre aprender a programar “no feeling”, a selva de IDEs com IA e a impossibilidade elegante de acompanhar o ritmo do mundo.</p>
+                                <a class="readmore" href="https://pintasart.github.io/nerd/2026/04/23/vibecoding/">read more</a>
+                            </div><!-- /.entry-content -->
+                        </article></li>
 
-                <li><article class="hentry">
-                    <header>
-                        <h1><a href="https://pintasart.github.io/nerd/2026/04/21/agruras-de-automatizar-a-publicacao-da-minha-pagina/" rel="bookmark"
-                               title="Permalink to Agruras de automatizar a publicação da minha página">Agruras de automatizar a publicação da minha página</a></h1>
-                    </header>
+                        <li><article class="hentry">
+                            <header>
+                                <h1><a href="https://pintasart.github.io/nerd/2026/04/21/agruras-de-automatizar-a-publicacao-da-minha-pagina/" rel="bookmark"
+                                       title="Permalink to Agruras de automatizar a publicação da minha página">Agruras de automatizar a publicação da minha página</a></h1>
+                            </header>
 
-                    <div class="entry-content">
+                            <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2026-04-21T20:00:00+01:00">
                 Publicado: 21 April 2026
@@ -66,20 +119,21 @@
         <!--                 <address class="vcard author">
                         Por:                                 <a class="url fn" href="https://pintasart.github.io/author/pintasart.html">Pintasart</a>
                 </address>
-        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> -->
-        
-</footer><!-- /.post-info -->                        <p>Da ideia nobre ao 403 dramático — e como no fim tudo faz sentido (quase).</p>
-                        <a class="readmore" href="https://pintasart.github.io/nerd/2026/04/21/agruras-de-automatizar-a-publicacao-da-minha-pagina/">read more</a>
-                    </div><!-- /.entry-content -->
-                </article></li>
+        -->
+        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> 
+<p>tags: <a href="https://pintasart.github.io/tag/git/">git</a> <a href="https://pintasart.github.io/tag/github/">github</a> </p>        
+</footer><!-- /.post-info -->                                <p>Da ideia nobre ao 403 dramático — e como no fim tudo faz sentido (quase).</p>
+                                <a class="readmore" href="https://pintasart.github.io/nerd/2026/04/21/agruras-de-automatizar-a-publicacao-da-minha-pagina/">read more</a>
+                            </div><!-- /.entry-content -->
+                        </article></li>
 
-                <li><article class="hentry">
-                    <header>
-                        <h1><a href="https://pintasart.github.io/nerd/2026/04/19/o-primeiro-post/" rel="bookmark"
-                               title="Permalink to O primeiro post.">O primeiro post.</a></h1>
-                    </header>
+                        <li><article class="hentry">
+                            <header>
+                                <h1><a href="https://pintasart.github.io/nerd/2026/04/19/o-primeiro-post/" rel="bookmark"
+                                       title="Permalink to O primeiro post.">O primeiro post.</a></h1>
+                            </header>
 
-                    <div class="entry-content">
+                            <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2026-04-19T23:00:00+01:00">
                 Publicado: 19 April 2026
@@ -88,14 +142,55 @@
         <!--                 <address class="vcard author">
                         Por:                                 <a class="url fn" href="https://pintasart.github.io/author/pintasart.html">Pintasart</a>
                 </address>
-        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> -->
+        -->
+        <p>Em: <a href="https://pintasart.github.io/nerd/">Nerd</a>.</p> 
         
-</footer><!-- /.post-info -->                        <p>Como qualquer primeiro post, não há-de ter grande conteúdo.</p>
-                        <a class="readmore" href="https://pintasart.github.io/nerd/2026/04/19/o-primeiro-post/">read more</a>
-                    </div><!-- /.entry-content -->
-                </article></li>
-                    </ol><!-- /#posts-list -->
-                    </section><!-- /#content -->
+</footer><!-- /.post-info -->                                <p>Como qualquer primeiro post, não há-de ter grande conteúdo.</p>
+                                <a class="readmore" href="https://pintasart.github.io/nerd/2026/04/19/o-primeiro-post/">read more</a>
+                            </div><!-- /.entry-content -->
+                        </article></li>
+                            </ol><!-- /#posts-list -->
+                            </section><!-- /#content -->
+                                </div>
+                                <aside id="sidebar">
+                                            <div class="widget">
+                <h2>Categorias</h2>
+                <ul>
+                    <li>
+                        <a href="https://pintasart.github.io/nerd/">
+                            Nerd <span class="count">(4)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="widget">
+                <h2>Tags</h2>
+                <ul>
+                    <li>
+                        <a href="https://pintasart.github.io/tag/git/">
+                            git <span class="count">(1)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pintasart.github.io/tag/github/">
+                            github <span class="count">(1)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pintasart.github.io/tag/ia/">
+                            IA <span class="count">(2)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pintasart.github.io/tag/llms/">
+                            LLMS <span class="count">(2)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+                                </aside>
+                            </div>
 
         </body>
 </html>

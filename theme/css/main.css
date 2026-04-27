@@ -516,3 +516,116 @@ section#content > article > .entry-content > footer.post-info {
 
 #add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 #add-comment * {margin-bottom: .5em;}
+
+/* Layout com sidebar (apenas na página Blog e de categoria) */
+#page-wrapper {
+    display: flex;
+    gap: 2em;
+    max-width: 1020px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+#main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Anula o max-width fixo dos blocos dentro do novo layout */
+#page-wrapper #featured,
+#page-wrapper #content {
+    max-width: 100%;
+}
+
+#sidebar {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+#sidebar .widget {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 1.5em;
+}
+
+#sidebar .widget h2 {
+    color: #C74350;
+    font-family: 'Yanone Kaffeesatz', arial, serif;
+    font-size: 1.143em;
+    margin-top: 0;
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #eee;
+}
+
+#sidebar .widget ul {
+    list-style: none;
+    margin: 0;
+}
+
+#sidebar .widget li {
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#sidebar .widget li:last-child {
+    border-bottom: none;
+}
+
+#sidebar .widget a:link,
+#sidebar .widget a:visited {
+    color: #444;
+    display: block;
+    text-decoration: none;
+    padding: .4em .25em;
+}
+
+#sidebar .widget a:hover,
+#sidebar .widget a:active {
+    background-color: #C74350;
+    color: #fff;
+    text-shadow: none;
+}
+
+#sidebar .widget a.active {
+    color: #C74350;
+    font-weight: bold;
+}
+
+#sidebar .widget .count {
+    color: #888;
+    font-size: .85em;
+}
+
+@media (prefers-color-scheme: dark) {
+    #sidebar .widget {
+        background: #151617;
+    }
+    #sidebar .widget li {
+        border-bottom-color: #252525;
+    }
+    #sidebar .widget a:link,
+    #sidebar .widget a:visited {
+        color: #888;
+    }
+}
+
+/* Mobile: sidebar abaixo do conteúdo */
+@media (max-width: 720px) {
+    #page-wrapper {
+        flex-direction: column;
+    }
+    #sidebar {
+        width: 100%;
+    }
+}
+
+/* Index: só um artigo em destaque (sem lista) — sidebar a largura total do contentor */
+.index-sidebar-solo {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+.index-sidebar-solo #sidebar {
+    width: 100%;
+}
