@@ -21,75 +21,47 @@
 
                         <aside id="featured" class="body">
                             <article>
-                                <h1 class="entry-title"><a href="https://pintasart.github.io/blog/2026/05/02/seis-ferramentas-um-prompt-e-uma-faca-de-plastico/">Seis ferramentas, um prompt e uma faca de plástico</a></h1>
-                                <p>Há perguntas que parecem simples até as fazeres a alguém que leva as coisas a sério. <em>"Como se avalia um texto?"</em> é uma dessas perguntas. Fiz-a a seis sistemas de inteligência artificial diferentes. O resultado foi um script Python que ninguém me pediu, uma tabela de métricas que não sei bem interpretar, e a sensação de ter construído qualquer coisa com uma faca de plástico — mas que corta na mesma.</p>
-<h2>A ideia inicial</h2>
-<p>A ideia era esta: criar uma ferramenta capaz de avaliar textos de forma qualitativa e quantitativa. Para avaliar respostas de IA, discursos políticos, artigos de blog — qualquer coisa que seja escrita e que alguém queira comparar com outra coisa escrita.</p>
-<p>Não tinha metodologia. Não tinha framework. Tinha um prompt genérico e seis separadores abertos no browser.</p>
-<p>O prompt foi este, igual para todos:</p>
-<blockquote>
-<p><em>"Quais os critérios para avaliar qualitativa e quantitativamente dois textos?"</em></p>
-</blockquote>
-<p>Simples ao ponto de ser quase irresponsável. Sem contexto, sem propósito declarado, sem exemplos. Uma pergunta que um estudante do secundário poderia fazer. O que cada ferramenta fez com ela é o que interessa.</p>
-<h2>As seis respostas</h2>
-<p>A metodologia seguida foi a seguinte: a todos foi colocado o mesmo prompt inicial e posteriormente solicitei que criassem um script ou melhorasse o script gerado na ferramenta anterior. Assim:</p>
-<p><strong>ChatGPT</strong> foi o mais organizado à partida. Distinguiu logo os dois campos — quantitativo e qualitativo — com clareza cirúrgica. Do lado mensurável: número de palavras, comprimento médio de frases, diversidade lexical, legibilidade, conectores, distribuição gramatical. Do lado interpretativo: clareza, coesão, coerência, rigor terminológico, fluidez, estrutura argumentativa. Depois transformou esse modelo conceptual num script Python com <code>spaCy</code> e <code>textstat</code>. Funcional, direto, sem surpresas.</p>
-<p><strong>Gemini</strong> mergulhou fundo nos critérios antes de qualquer código. Riqueza lexical, densidade de conectores, índices de legibilidade para o lado quantitativo; coerência, tom de voz e força dos argumentos para o qualitativo. Quando chegou ao script, foi mais longe do que o ChatGPT: lematização para medir riqueza vocabular real, deteção de <em>termos de hesitação</em> para avaliar assertividade, scores de objetividade e eficiência informativa.</p>
-<p><strong>Copilot</strong> apresentou a distinção com um detalhe que os outros não tinham sublinhado: que uma boa comparação combina <em>números</em> com <em>leitura crítica</em>, e que o objetivo não é só medir como um texto é escrito, mas perceber <em>como funciona</em> enquanto peça comunicativa. No script que produziu depois, adicionou deteção de voz passiva mais robusta, normalização de conectores e <em>hedges</em>, coesão lexical, e exportação para CSV com gráficos automáticos e ranking global.</p>
-<p><strong>Perplexity</strong> foi o mais direto na teoria. Quando chegou ao script, fez algo diferente dos outros: reviu o código existente linha a linha, identificou pontos fortes e limitações, e produziu uma versão que separava explicitamente métricas descritivas de juízo qualitativo.</p>
-<p><strong>Grok</strong> foi talvez o mais académico no tom — estruturado, documentado, com relatórios profissionais em Markdown e HTML. <em>Profissional</em> foi a palavra que me ocorreu ao ler a resposta — e não é necessariamente um elogio.</p>
-<p><strong>Claude</strong> foi o único que incluiu, na resposta teórica, uma tabela comparativa pronta a usar. Na fase do script, identificou lacunas específicas no código e integrou seis novas funções, incluindo um sistema de perfis configuráveis (<code>geral</code>, <code>académico</code>, <code>jornalístico</code>, <code>ficção</code>) que adapta os pesos do score global ao tipo de texto em análise.</p>
-<p>Para comparar as respostas de forma sistemática, construí tabelas de análise com quatro dimensões: estrutura da resposta, critérios quantitativos identificados, critérios qualitativos, e valor acrescentado.</p>
-<p><img alt="Estrutura da resposta — tabela comparativa das seis ferramentas" src="https://pintasart.github.io/images/ia_tabela_estrutura_resposta.png"></p>
-<p>O primeiro dado saliente é imediato: só o Claude incluiu uma tabela comparativa na resposta. Todas as outras ferramentas descreveram — o Claude mostrou. É uma diferença pequena na forma, mas significativa na utilidade.</p>
-<p>O que cada ferramenta identificou como relevante — e o que deixou de fora — fica visível nas duas tabelas seguintes:</p>
-<p><img alt="Critérios quantitativos identificados por cada ferramenta" src="https://pintasart.github.io/images/ia_tabela_criterios_quantitativos.png"></p>
-<p><img alt="Critérios qualitativos identificados por cada ferramenta" src="https://pintasart.github.io/images/ia_tabela_criterios_qualitativos.png"></p>
-<p>A tabela dos critérios qualitativos tem um dado curioso: <em>originalidade</em> foi assinalada como ausente no ChatGPT, Gemini e Copilot — as três ferramentas que mais enfatizaram o rigor metodológico. As que foram mais flexíveis na estrutura foram também as que incluíram o critério mais difícil de medir.</p>
-<p><img alt="Valor acrescentado e aplicabilidade das respostas" src="https://pintasart.github.io/images/ia_tabela_valor_acrescentado.png"></p>
-<p>Esta última tabela resume o que separa respostas teoricamente ricas de respostas praticamente úteis. O Claude foi o único a incluir um recurso prático imediato. O ChatGPT e o Gemini lideraram no rigor terminológico e abrangência global. O Copilot ficou no meio — médio em quase tudo, fraco em nada.</p>
-<h2>O script que foi crescendo</h2>
-<p>Nenhuma das ferramentas entregou um produto acabado. O que aconteceu foi que cada conversa acrescentou qualquer coisa ao que existia antes — ou obrigou a repensar o que já estava feito. O percurso ficou com três versões distintas:</p>
-<p><strong><code>script_melhorado.py</code></strong> — a versão mínima. Calcula métricas básicas, exporta para CSV, gera dois gráficos. Boa base, pouco rica.</p>
-<p><strong><code>script_melhorado1.py</code></strong> — acrescenta relatório em Markdown e HTML, métrica de pronomes referenciais, mensagens de execução mais claras.</p>
-<p><strong><code>script_melhorado2.py</code></strong> — a versão mais completa. Perfil de avaliação configurável, pesos ajustáveis, métricas sintáticas, progressão temática, repetição lexical, distribuição de entidades nomeadas e verificação gramatical via <code>language_tool_python</code>.</p>
-<p>No final, o script produz: relatório em Markdown, relatório em HTML, tabela CSV com todas as métricas, e três gráficos. Para usar:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>script_melhorado2.py<span class="w"> </span>texto1.txt<span class="w"> </span>texto2.txt
-</code></pre></div>
-
-<h2>O teste: o script avalia as suas próprias origens</h2>
-<p>Com o script pronto, havia uma experiência óbvia a fazer: usar a ferramenta para avaliar as respostas que lhe deram origem. As seis respostas ao prompt inicial foram processadas como textos de input.</p>
-<p>O gráfico de clareza vs. objetividade resume o padrão que emerge:</p>
-<p><img alt="Clareza vs. Objetividade por ferramenta" src="https://pintasart.github.io/images/ia_grafico_clareza_objetividade.png"></p>
-<p>A objetividade é homogeneamente alta em todas as ferramentas — todas próximas de 10. A clareza é onde divergem. Copilot e Gemini lideram; ChatGPT fica surpreendentemente abaixo do meio; Claude fica no último lugar com 2.3.</p>
+                                <h1 class="entry-title"><a href="https://pintasart.github.io/blog/2026/05/10/o-25-de-abril-medido-em-flesch/">O 25 de Abril medido em Flesch</a></h1>
+                                <p>Há uma lógica perversa em ter uma ferramenta nova nas mãos: a tentação de a usar em tudo, incluindo no que ela claramente não foi feita para medir. O script de análise textual estava pronto. Os discursos das comemorações dos 52 anos do 25 de Abril de 1974 tinham acontecido há dias. A conclusão foi inevitável.</p>
+<h2>O corpus e as suas ressalvas</h2>
+<p>Foram analisados 9 discursos proferidos na sessão solene da Assembleia da República, de oradores de diferentes partidos e instituições.</p>
+<p>Aqui ficam duas ressalvas que importa registar antes de qualquer número: os discursos do Presidente da República e do Presidente da Assembleia da República foram retirados das páginas web oficiais das respectivas instituições — são textos verificados, na sua forma escrita definitiva. Os restantes são transcrições automáticas de vídeos do YouTube, processadas com duas ou três ferramentas diferentes. Transcrições automáticas introduzem ruído: palavras trocadas, pontuação ausente ou errada, frases cortadas a meio. Qualquer métrica que dependa de estrutura frásica — legibilidade, comprimento médio de frase, qualidade gramatical — pode estar a medir parcialmente a qualidade da transcrição, não a qualidade do discurso. Dito isto, avante.</p>
+<h2>O que os gráficos mostram</h2>
+<p>O gráfico de clareza vs. objetividade estabelece o padrão geral:</p>
+<p><img alt="Clareza vs. Objetividade — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_clareza_objetividade.png"></p>
+<p>A primeira diferença em relação à análise das ferramentas de IA é imediata: os scores de clareza são substancialmente mais altos. Nenhum orador fica abaixo de 5.4 — o mínimo nas ferramentas de IA era 2.3. Os discursos políticos, mesmo transcritos, têm uma estrutura frásica mais oral e mais acessível do que as respostas técnicas dos sistemas de IA.</p>
+<p>A objetividade oscila ligeiramente entre oradores, ao contrário da linha perfeitamente plana que se viu na análise anterior. André Soares (PSD), Fabian Figueiredo (BE) e André Ventura (CHEGA) lideram na clareza. Mariana Leitão (IL) fica no último lugar — as frases mais longas do grupo, 24.3 palavras em média, e a maior profundidade sintática (dep depth 5.90).</p>
 <p>O gráfico de complexidade e coesão acrescenta outra camada:</p>
-<p><img alt="Complexidade e Coesão por ferramenta" src="https://pintasart.github.io/images/ia_grafico_complexidade_coesao.png"></p>
-<p>O Claude tem a maior variedade sintática do grupo — bem acima de todos os outros. A coesão lexical e a progressão temática são outra história: em vários modelos a progressão temática é praticamente zero, o que o gráfico torna visível. Mas essa riqueza sintática do Claude não se traduz em melhor score de clareza porque o texto é curto e contém uma tabela que o analisador processa como texto fragmentado.</p>
-<p>O gráfico de eficiência vs. densidade factual dá mais contexto:</p>
-<p><img alt="Eficiência vs. Densidade Factual" src="https://pintasart.github.io/images/ia_grafico_eficiencia_densidade.png"></p>
-<p>O Perplexity destaca-se com a maior densidade factual — o texto está cheio de referências concretas. O Gemini fica isolado no canto esquerdo com a eficiência mais baixa do grupo, embora não seja o pior na densidade. Esse lugar pertence ao Claude, que tem o valor mínimo no eixo Y: alta eficiência de palavras de conteúdo, mas pouquíssimas entidades e números. É o oposto do ChatGPT, que combina eficiência alta com densidade factual elevada.</p>
-<p>O perfil qualitativo mostra o resultado final de forma clara:</p>
-<p><img alt="Perfil Qualitativo dos Textos" src="https://pintasart.github.io/images/ia_grafico_perfil_qualitativo.png"></p>
-<p>A linha de objetividade é completamente plana para todas as ferramentas — o que em si já é um resultado. A linha de clareza ajustada oscila: parte alta no Gemini, desce até um vale acentuado no ChatGPT, recupera no Perplexity, e volta a cair até ao mínimo no Claude. Não é uma queda contínua — é uma linha irregular que, mesmo assim, começa e acaba nos extremos opostos.</p>
-<h2>O paradoxo do Claude — e o que ele revela</h2>
-<p>O ranking geral confirma o que os gráficos sugeriam:</p>
-<p><img alt="Ranking Geral — Q_Overall por ferramenta" src="https://pintasart.github.io/images/ia_ranking_geral.png"></p>
-<p>Gemini (6.71) e Copilot (6.70) no topo. Claude (5.56) no último lugar.</p>
-<p>O paradoxo é este: o Claude foi o único a incluir um recurso prático imediato — precisamente a tabela que o sistema de pontuação penalizou. O texto mais curto, com a tabela em Markdown que o analisador processa como texto corrido fragmentado, recebe <code>Q_Clareza</code> de 2.3 e legibilidade de −79.6 — um valor anómalo que não mede falta de clareza, mede incompatibilidade com o modelo.</p>
-<p>Não é uma falha do Claude. É o instrumento a revelar os seus próprios limites. Um score que penaliza tabelas num contexto onde tabelas são a melhor forma de comunicar não está a medir qualidade — está a medir conformidade com um modelo de texto corrido.</p>
-<p>As palavras mais repetidas em cada ferramenta confirmam que todas gravitaram em torno do mesmo campo semântico:</p>
-<p><img alt="Palavras Mais Repetidas por Ferramenta" src="https://pintasart.github.io/images/ia_palavras_repetidas.png"></p>
-<p><em>texto</em>, <em>critério</em>, <em>análise</em> — presentes em quase todas. O Claude é o único onde <em>avaliação</em> e <em>adequação</em> dominam, em detrimento de <em>texto</em> e <em>frase</em>. Uma diferença subtil de foco que o ranking global não captura.</p>
-<h2>O que ficou por fazer</h2>
-<p>A secção de critérios qualitativos humanos — coerência global, qualidade argumentativa, originalidade, impacto — ficou em branco em todos os testes. São precisamente as dimensões que as próprias ferramentas identificaram como mais determinantes. Preencher essa grelha manualmente permitiria um ranking final muito mais robusto e potencialmente alteraria as posições do ChatGPT e do Claude.</p>
-<p>Há também uma inconsistência que vale registar: a densidade de conectores é zero em quatro dos seis textos — incluindo o do Gemini e o do ChatGPT, que foram os que mais sublinharam os conectores como critério importante. O que prescrevem e o que produzem não coincide. Não é surpreendente. Mas é instrutivo.</p>
-<h2>Conclusão provisória</h2>
-<p>Não sei se os resultados do script estão certos. Não tenho formação em linguística computacional, não calibrei os ponderadores com dados reais, e o <code>Q_Overall</code> foi construído com a intuição de quem estava a aprender enquanto fazia.</p>
-<p>O que sei é que a ferramenta existe, corre, e produz números que convidam a pensar. Às vezes os números estão errados de formas que ensinam qualquer coisa. O Claude na última posição porque incluiu uma tabela é, em si, uma lição sobre o que acontece quando se tenta medir o que é útil com métricas que medem outra coisa.</p>
-<p>A faca de plástico corta. Não como um bisturi — mas para abrir a embalagem, serve.</p>
-<p>O próximo passo é apontar este instrumento a algo com mais substância. Discursos políticos, por exemplo. O 25 de Abril tem os seus.</p><footer class="post-info">
-        <abbr class="published" title="2026-05-02T10:00:00+01:00">
-                Publicado: 02 May 2026
+<p><img alt="Complexidade e Coesão — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_complexidade_coesao.png"></p>
+<p>André Ventura (CHEGA) e Mariana Leitão (IL) destacam-se pela progressão temática mais alta do grupo (≈0.208) — os discursos mantêm fio condutor entre frases de forma consistente. Que os dois oradores com maior coesão temática sejam também os que ocupam o mesmo quadrante do espectro político é um daqueles resultados que o script produz sem saber o que está a dizer. João Almeida (CDS) e André Ventura (CHEGA) têm a melhor coesão lexical, mostrando maior fluidez na encadeação de ideias.</p>
+<p>O perfil qualitativo mostra a trajectória de forma clara:</p>
+<p><img alt="Perfil Qualitativo — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_perfil_qualitativo.png"></p>
+<p>Aqui a diferença em relação às ferramentas de IA é marcante. Nessa análise, a clareza ajustada oscilava — subia no Perplexity, descia no ChatGPT, sem padrão claro. Nestes discursos, a descida é quase monótona: de André Soares (8.1) até Mariana Leitão (4.2), com uma quebra abrupta no final. A linha de objetividade mantém-se alta e estável em todos os oradores.</p>
+<h2>O ranking e a inconsistência gramatical do líder</h2>
+<p><img alt="Ranking Geral — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_ranking_geral.png"></p>
+<p>A ordem final é esta: André Soares (7.37), Fabian Figueiredo (7.33), André Ventura (7.23), Aguiar Branco (7.14), António Seguro (7.05), João Almeida (6.82), Rui Tavares (6.60), José Luís Carneiro (6.52), Mariana Leitão (5.84).</p>
+<p>O resultado mais inesperado está no topo: André Soares (PSD) lidera com a pior taxa de erros gramaticais do grupo — 4.79 erros por 100 palavras, classificação "Fraca". O modelo premia a clareza e a legibilidade de forma suficientemente pesada para absorver essa penalização. Aguiar Branco, o Presidente da Assembleia da República, é o único com qualidade gramatical classificada como "Boa" (0.92 erros por 100 palavras) — e fica em 4.º lugar.</p>
+<p>O que isto diz sobre o instrumento: o score composto valoriza a acessibilidade comunicativa acima do rigor normativo. Numa sessão solene do 25 de Abril, onde a Presidência da Assembleia discursa com texto oficial verificado e o líder parlamentar do PSD é transcrito do YouTube, é muito provável que parte dos "erros" do André Soares sejam artefactos da transcrição. Sem o texto oficial, o script não consegue separar os dois. O número existe — a sua interpretação é mais complicada.</p>
+<h2>O que a palavra <em>cravo</em> revela</h2>
+<p>As palavras mais repetidas por orador contam uma história paralela:</p>
+<p><img alt="Palavras Mais Repetidas — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_palavras_repetidas.png"></p>
+<p><em>Abril</em> aparece em quase todos os oradores — era de esperar, é o tema da sessão. <em>Liberdade</em>, <em>democracia</em>, <em>país</em>, <em>república</em>, <em>presidente</em> circulam pelo grupo. O campo semântico é partilhado, como seria de esperar numa sessão comemorativa onde todos falam do mesmo evento.</p>
+<p>Mas há um detalhe na lista de André Ventura que não aparece em mais nenhum orador: <em>cravo</em>. É a única referência directa ao símbolo material do 25 de Abril em toda a lista das palavras mais repetidas. Fabian Figueiredo (BE) tem <em>sras</em> — provavelmente "senhoras e senhores" da fórmula protocolar, capturado pela transcrição. António Seguro (Presidente da República) é o único onde <em>haver</em> e <em>hoje</em> dominam, o que sugere um discurso mais centrado no presente do que na memória histórica.</p>
+<p>O script não interpreta nada disto. Conta palavras. Quem interpreta é quem lê.</p>
+<h2>O que o índice de Flesch não consegue captar</h2>
+<p>A secção de avaliação qualitativa humana — profundidade argumentativa, adequação ao propósito, originalidade, impacto — ficou em branco para todos os oradores, como ficou para as ferramentas de IA. Mas aqui o vazio pesa mais.</p>
+<p>Um discurso do 25 de Abril tem convenções retóricas muito específicas que nenhuma métrica automática consegue medir: a invocação histórica, a interpelação ao presente, o apelo cívico. A forma como cada orador negoceia a memória de 1974 com o Portugal de 2026 — o que escolhe sublinhar, o que deixa de fora, como usa o passado para legitimar o presente — é exactamente o que distingue um bom discurso comemorativo de um genérico. O Flesch não tem opinião sobre isso.</p>
+<p>Ventura e Leitão têm a maior progressão temática do grupo. São os dois oradores com discurso mais coeso tematicamente segundo o script. São também os dois oradores que ocupam posições mais distantes entre si. O que têm em comum é a estrutura — a forma como constroem e mantêm o argumento frase a frase. O que dizem com essa estrutura é outra conversa, que o script não tem.</p>
+<h2>O que aprendi com isto</h2>
+<p>Que a ferramenta funciona — no sentido em que produz números, os números têm coerência interna, e alguns resultados são genuinamente surpreendentes. A inconsistência gramatical do líder do ranking é desse tipo: não é o resultado esperado, e obriga a pensar porque acontece.</p>
+<p>Que a ferramenta tem limites óbvios — mais visíveis quando aplicada a textos com forte componente retórica, histórica ou política. Um discurso do 25 de Abril não é um artigo de jornal nem um relatório técnico. Os ponderadores padrão do script não foram calibrados para esse género.</p>
+<p>E que a qualidade gramatical medida automaticamente em textos transcritos do YouTube não mede qualidade gramatical. Mede a soma da qualidade gramatical com a qualidade da transcrição. São coisas diferentes e o instrumento não as separa.</p>
+<h2>Conclusão</h2>
+<p>O script sobreviveu ao contacto com discursos políticos reais. Não foi desacreditado — foi posto em perspectiva. Os números que produz são um ponto de partida para pensar, não um destino.</p>
+<p>O próximo passo seria preencher a secção de avaliação qualitativa humana — cruzar os scores automáticos com uma leitura atenta do que cada orador disse, como disse, e para quem disse. Esse trabalho não é automatizável. É o trabalho que justifica ter construído a faca de plástico: para abrir espaço ao que só a leitura humana consegue fazer.</p>
+<p>Por enquanto, o 25 de Abril medido em Flesch diz que André Soares fala de forma acessível, que Mariana Leitão tem frases longas, e que André Ventura foi o único a mencionar o cravo. Sobre o resto — o que significa o Abril de 1974 para cada um deles, e o que fazem com essa memória — o script fica em silêncio. Que é, a seu modo, também uma resposta.</p><footer class="post-info">
+        <abbr class="published" title="2026-05-10T12:00:00+01:00">
+                Publicado: 10 May 2026
         </abbr>
 
         <!--                 <address class="vcard author">
@@ -106,6 +78,29 @@
                                 <h1>Other articles</h1>
                                 <hr />
                                 <ol id="posts-list" class="hfeed">
+
+                        <li><article class="hentry">
+                            <header>
+                                <h1><a href="https://pintasart.github.io/blog/2026/05/02/seis-ferramentas-um-prompt-e-uma-faca-de-plastico/" rel="bookmark"
+                                       title="Permalink to Seis ferramentas, um prompt e uma faca de plástico">Seis ferramentas, um prompt e uma faca de plástico</a></h1>
+                            </header>
+
+                            <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2026-05-02T10:00:00+01:00">
+                Publicado: 02 May 2026
+        </abbr>
+
+        <!--                 <address class="vcard author">
+                        Por:                                 <a class="url fn" href="https://pintasart.github.io/author/pintasart.html">Pintasart</a>
+                </address>
+        -->
+        <p>Em: <a href="https://pintasart.github.io/blog/">blog</a>.</p> 
+        
+</footer><!-- /.post-info -->                                <p>Perguntei a seis sistemas de IA como se avalia um texto. Cada um respondeu diferente, todos acharam que tinham razão, e no fim havia um script Python a funcionar. Ninguém planeou isto.</p>
+                                <a class="readmore" href="https://pintasart.github.io/blog/2026/05/02/seis-ferramentas-um-prompt-e-uma-faca-de-plastico/">read more</a>
+                            </div><!-- /.entry-content -->
+                        </article></li>
 
                         <li><article class="hentry">
                             <header>
@@ -207,7 +202,7 @@
                 <ul>
                     <li>
                         <a href="https://pintasart.github.io/blog/">
-                            blog <span class="count">(1)</span>
+                            blog <span class="count">(2)</span>
                         </a>
                     </li>
                     <li>
