@@ -21,45 +21,58 @@
 
                         <aside id="featured" class="body">
                             <article>
-                                <h1 class="entry-title"><a href="https://pintasart.github.io/blog/2026/05/10/o-25-de-abril-medido-em-flesch/">O 25 de Abril medido em Flesch</a></h1>
-                                <p>Há uma lógica perversa em ter uma ferramenta nova nas mãos: a tentação de a usar em tudo, incluindo no que ela claramente não foi feita para medir. O script de análise textual estava pronto. Os discursos das comemorações dos 52 anos do 25 de Abril de 1974 tinham acontecido há dias. A conclusão foi inevitável.</p>
-<h2>O corpus e as suas ressalvas</h2>
-<p>Foram analisados 9 discursos proferidos na sessão solene da Assembleia da República, de oradores de diferentes partidos e instituições.</p>
-<p>Aqui ficam duas ressalvas que importa registar antes de qualquer número: os discursos do Presidente da República e do Presidente da Assembleia da República foram retirados das páginas web oficiais das respectivas instituições — são textos verificados, na sua forma escrita definitiva. Os restantes são transcrições automáticas de vídeos do YouTube, processadas com duas ou três ferramentas diferentes. Transcrições automáticas introduzem ruído: palavras trocadas, pontuação ausente ou errada, frases cortadas a meio. Qualquer métrica que dependa de estrutura frásica — legibilidade, comprimento médio de frase, qualidade gramatical — pode estar a medir parcialmente a qualidade da transcrição, não a qualidade do discurso. Dito isto, avante.</p>
-<h2>O que os gráficos mostram</h2>
-<p>O gráfico de clareza vs. objetividade estabelece o padrão geral:</p>
-<p><img alt="Clareza vs. Objetividade — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_clareza_objetividade.png"></p>
-<p>A primeira diferença em relação à análise das ferramentas de IA é imediata: os scores de clareza são substancialmente mais altos. Nenhum orador fica abaixo de 5.4 — o mínimo nas ferramentas de IA era 2.3. Os discursos políticos, mesmo transcritos, têm uma estrutura frásica mais oral e mais acessível do que as respostas técnicas dos sistemas de IA.</p>
-<p>A objetividade oscila ligeiramente entre oradores, ao contrário da linha perfeitamente plana que se viu na análise anterior. André Soares (PSD), Fabian Figueiredo (BE) e André Ventura (CHEGA) lideram na clareza. Mariana Leitão (IL) fica no último lugar — as frases mais longas do grupo, 24.3 palavras em média, e a maior profundidade sintática (dep depth 5.90).</p>
-<p>O gráfico de complexidade e coesão acrescenta outra camada:</p>
-<p><img alt="Complexidade e Coesão — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_complexidade_coesao.png"></p>
-<p>André Ventura (CHEGA) e Mariana Leitão (IL) destacam-se pela progressão temática mais alta do grupo (≈0.208) — os discursos mantêm fio condutor entre frases de forma consistente. Que os dois oradores com maior coesão temática sejam também os que ocupam o mesmo quadrante do espectro político é um daqueles resultados que o script produz sem saber o que está a dizer. João Almeida (CDS) e André Ventura (CHEGA) têm a melhor coesão lexical, mostrando maior fluidez na encadeação de ideias.</p>
-<p>O perfil qualitativo mostra a trajectória de forma clara:</p>
-<p><img alt="Perfil Qualitativo — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_perfil_qualitativo.png"></p>
-<p>Aqui a diferença em relação às ferramentas de IA é marcante. Nessa análise, a clareza ajustada oscilava — subia no Perplexity, descia no ChatGPT, sem padrão claro. Nestes discursos, a descida é quase monótona: de André Soares (8.1) até Mariana Leitão (4.2), com uma quebra abrupta no final. A linha de objetividade mantém-se alta e estável em todos os oradores.</p>
-<h2>O ranking e a inconsistência gramatical do líder</h2>
-<p><img alt="Ranking Geral — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_ranking_geral.png"></p>
-<p>A ordem final é esta: André Soares (7.37), Fabian Figueiredo (7.33), André Ventura (7.23), Aguiar Branco (7.14), António Seguro (7.05), João Almeida (6.82), Rui Tavares (6.60), José Luís Carneiro (6.52), Mariana Leitão (5.84).</p>
-<p>O resultado mais inesperado está no topo: André Soares (PSD) lidera com a pior taxa de erros gramaticais do grupo — 4.79 erros por 100 palavras, classificação "Fraca". O modelo premia a clareza e a legibilidade de forma suficientemente pesada para absorver essa penalização. Aguiar Branco, o Presidente da Assembleia da República, é o único com qualidade gramatical classificada como "Boa" (0.92 erros por 100 palavras) — e fica em 4.º lugar.</p>
-<p>O que isto diz sobre o instrumento: o score composto valoriza a acessibilidade comunicativa acima do rigor normativo. Numa sessão solene do 25 de Abril, onde a Presidência da Assembleia discursa com texto oficial verificado e o líder parlamentar do PSD é transcrito do YouTube, é muito provável que parte dos "erros" do André Soares sejam artefactos da transcrição. Sem o texto oficial, o script não consegue separar os dois. O número existe — a sua interpretação é mais complicada.</p>
-<h2>O que a palavra <em>cravo</em> revela</h2>
-<p>As palavras mais repetidas por orador contam uma história paralela:</p>
-<p><img alt="Palavras Mais Repetidas — discursos do 25 de Abril" src="https://pintasart.github.io/images/abril_palavras_repetidas.png"></p>
-<p><em>Abril</em> aparece em quase todos os oradores — era de esperar, é o tema da sessão. <em>Liberdade</em>, <em>democracia</em>, <em>país</em>, <em>república</em>, <em>presidente</em> circulam pelo grupo. O campo semântico é partilhado, como seria de esperar numa sessão comemorativa onde todos falam do mesmo evento.</p>
-<p>Mas há um detalhe na lista de André Ventura que não aparece em mais nenhum orador: <em>cravo</em>. É a única referência directa ao símbolo material do 25 de Abril em toda a lista das palavras mais repetidas. Fabian Figueiredo (BE) tem <em>sras</em> — provavelmente "senhoras e senhores" da fórmula protocolar, capturado pela transcrição. António Seguro (Presidente da República) é o único onde <em>haver</em> e <em>hoje</em> dominam, o que sugere um discurso mais centrado no presente do que na memória histórica.</p>
-<p>O script não interpreta nada disto. Conta palavras. Quem interpreta é quem lê.</p>
-<h2>O que o índice de Flesch não consegue captar</h2>
-<p>A secção de avaliação qualitativa humana — profundidade argumentativa, adequação ao propósito, originalidade, impacto — ficou em branco para todos os oradores, como ficou para as ferramentas de IA. Mas aqui o vazio pesa mais.</p>
-<p>Um discurso do 25 de Abril tem convenções retóricas muito específicas que nenhuma métrica automática consegue medir: a invocação histórica, a interpelação ao presente, o apelo cívico. A forma como cada orador negoceia a memória de 1974 com o Portugal de 2026 — o que escolhe sublinhar, o que deixa de fora, como usa o passado para legitimar o presente — é exactamente o que distingue um bom discurso comemorativo de um genérico. O Flesch não tem opinião sobre isso.</p>
-<p>Ventura e Leitão têm a maior progressão temática do grupo. São os dois oradores com discurso mais coeso tematicamente segundo o script. São também os dois oradores que ocupam posições mais distantes entre si. O que têm em comum é a estrutura — a forma como constroem e mantêm o argumento frase a frase. O que dizem com essa estrutura é outra conversa, que o script não tem.</p>
-<h2>O que aprendi com isto</h2>
-<p>Que a ferramenta funciona — no sentido em que produz números, os números têm coerência interna, e alguns resultados são genuinamente surpreendentes. A inconsistência gramatical do líder do ranking é desse tipo: não é o resultado esperado, e obriga a pensar porque acontece.</p>
-<p>Que a ferramenta tem limites óbvios — mais visíveis quando aplicada a textos com forte componente retórica, histórica ou política. Um discurso do 25 de Abril não é um artigo de jornal nem um relatório técnico. Os ponderadores padrão do script não foram calibrados para esse género.</p>
-<p>E que a qualidade gramatical medida automaticamente em textos transcritos do YouTube não mede qualidade gramatical. Mede a soma da qualidade gramatical com a qualidade da transcrição. São coisas diferentes e o instrumento não as separa.</p>
+                                <h1 class="entry-title"><a href="https://pintasart.github.io/transportes/2026/07/05/a-cp-e-o-calor-quando-suprimir-e-mais-facil-do-que-resolver/">A CP e o calor: quando suprimir é mais fácil do que resolver</a></h1>
+                                <p>Portugal continental atravessa uma onda de calor extrema, com o Instituto Português do Mar e da Atmosfera (IPMA) a colocar 12 distritos sob aviso vermelho e a prever máximas até aos 44ºC. O Governo decretou situação de alerta em todo o território continental devido ao agravamento do risco de incêndios rurais. Foi neste contexto que a CP anunciou um conjunto de "medidas extraordinárias", das quais a mais visível foi a supressão de seis circulações Intercidades durante o fim de semana: as ligações entre Lisboa Santa Apolónia e Guarda (e vice-versa), entre Lisboa Santa Apolónia e Porto Campanhã (e vice-versa), e entre Lisboa Oriente e Faro (e vice-versa).</p>
+<p>A justificação oficial é conhecida: o calor extremo afeta o conforto a bordo, pois os sistemas de climatização deixam de conseguir arrefecer a composição quando a temperatura exterior ultrapassa certos limiares. A resposta da empresa foi cancelar viagens e bloquear a venda de lugares em determinados horários. Quem tinha bilhete pode pedir troca ou reembolso, sem custos.</p>
+<p>Até aqui, os factos. O que vale a pena questionar é a lógica de fundo destas decisões — e é essa a razão de ser deste artigo.</p>
+<h2>Porque é que suprimir é a opção "fácil"</h2>
+<p>Suprimir uma circulação é, do ponto de vista operacional, a decisão de menor esforço para o operador. Não exige mobilizar meios adicionais, não exige coordenação com outras entidades, não exige investimento. Basta retirar o comboio da grelha horária e comunicar aos clientes já identificados que podem trocar o bilhete ou ser reembolsados.</p>
+<p>O problema é que esta lógica resolve o problema da CP — reduzir o risco de avaria, de desconforto a bordo ou de incidentes de segurança — mas não resolve o problema do passageiro, que continua a precisar de chegar a Guarda, ao Porto ou a Faro naquele dia. A empresa transfere o custo da solução para quem viaja: é a pessoa que tem de encontrar, sozinha e em cima da hora, uma alternativa — autocarro, carro próprio, outro meio ou simplesmente não fazer a viagem.</p>
+<p>Um exemplo prático torna isto claro. Um passageiro com bilhete para o IC 572 (Lisboa Oriente–Faro, partida às 14h02) que tivesse, por exemplo, uma consulta médica ou um compromisso de trabalho no Algarve nesse dia, vê o reembolso do bilhete como compensação financeira — mas isso não o leva a Faro. O reembolso resolve a relação contratual entre a CP e o cliente; não resolve a necessidade de deslocação que gerou a compra do bilhete em primeiro lugar. É essa distinção — entre "compensar" e "substituir o serviço" — que separa uma medida de gestão de risco responsável de uma medida que apenas protege o operador.</p>
+<h2>O que seria uma solução em vez de uma supressão</h2>
+<p>A crítica de fundo não é a de que a CP não devesse tomar precauções face às altas temperaturas — seria irresponsável não o fazer. A questão é que existe uma distância grande entre "suprimir" e "adaptar o serviço", e a CP escolheu sistematicamente o primeiro caminho.</p>
+<p>Outros operadores ferroviários europeus, quando confrontados com constrangimentos semelhantes (ondas de calor no Reino Unido, incêndios no sul de França, inundações na Alemanha), recorrem com frequência a soluções de substituição do serviço, e não apenas ao cancelamento puro:</p>
+<ul>
+<li><strong>Serviços de autocarro de substituição</strong>  nos troços afetados, prática comum na Great Western Railway e na SNCF em situações de corte de via ou risco extremo — o passageiro perde tempo, mas não perde a viagem.</li>
+<li><strong>Reforço temporário de material circulante com ar condicionado mais robusto</strong> nas linhas críticas, retirando de circulação apenas o material mais vulnerável, em vez de suprimir a ligação inteira.</li>
+<li><strong>Alteração de horários para períodos de menor calor</strong> (viagens noturnas ou de madrugada), em vez do cancelamento liso e simples de todo o dia.</li>
+<li><strong>Comunicação antecipada e reforçada</strong>, com alternativas concretas sugeridas ao cliente (por exemplo, indicação de ligações de autocarro da Rede Expressos ou de operadores regionais com bilhete aceite), em vez de apenas indicar o número de apoio ao cliente para pedir reembolso.</li>
+</ul>
+<p>Nenhuma destas soluções é trivial nem gratuita — todas implicam custo, planeamento e coordenação. E é precisamente aí que está o cerne da crítica: a CP escolheu a opção que tem custo quase nulo para si própria (suprimir) e evitou as opções que teriam custo operacional mas manteriam o serviço público a funcionar.</p>
+<h2>Quem paga a fatura desta escolha</h2>
+<p>Há uma dimensão que é sistematicamente secundarizada nestas comunicações: a CP é uma empresa pública, financiada por impostos, com a missão de garantir mobilidade enquanto serviço essencial. Quando um serviço público suprime a prestação em vez de a adaptar, quem sofre o prejuízo direto não é a empresa — é o contribuinte que já pagou, através dos seus impostos, para que este serviço exista e esteja disponível, e que agora tem de pagar uma segunda vez (em tempo, em dinheiro, em transporte alternativo) para conseguir o mesmo resultado que o serviço público deveria ter garantido.</p>
+<p>Este ponto é particularmente relevante num contexto em que o governo defende publicamente que a CP continuará a ser "o pilar do sistema ferroviário português", incluindo com a abertura a fábricas e novos investimentos ferroviários anunciados. Existe aqui uma contradição entre o discurso institucional de robustez e centralidade do serviço público, e a prática recorrente de resolver problemas operacionais suprimindo o serviço em vez de o reforçar.</p>
+<p>Vale ainda notar que este não é um episódio isolado: a fragilidade do material circulante de longo curso da CP perante temperaturas extremas já tinha sido noticiada em anos anteriores, o que significa que a supressão não é uma resposta a um imprevisto súbito, mas a gestão recorrente de uma vulnerabilidade estrutural conhecida — sem que, entre um verão e o seguinte, se tenha investido de forma visível em soluções que evitem repetir o mesmo cenário.</p>
 <h2>Conclusão</h2>
-<p>O script sobreviveu ao contacto com discursos políticos reais. Não foi desacreditado — foi posto em perspectiva. Os números que produz são um ponto de partida para pensar, não um destino.</p>
-<p>O próximo passo seria preencher a secção de avaliação qualitativa humana — cruzar os scores automáticos com uma leitura atenta do que cada orador disse, como disse, e para quem disse. Esse trabalho não é automatizável. É o trabalho que justifica ter construído a faca de plástico: para abrir espaço ao que só a leitura humana consegue fazer.</p>
-<p>Por enquanto, o 25 de Abril medido em Flesch diz que André Soares fala de forma acessível, que Mariana Leitão tem frases longas, e que André Ventura foi o único a mencionar o cravo. Sobre o resto — o que significa o Abril de 1974 para cada um deles, e o que fazem com essa memória — o script fica em silêncio. Que é, a seu modo, também uma resposta.</p><footer class="post-info">
+<p>A supressão de comboios por motivos de segurança em condições de calor extremo pode, em situações-limite, ser justificada. O que não se justifica é que seja a primeira e praticamente única resposta, ano após ano, a um problema que é recorrente e previsível. Cancelar é administrativamente simples; adaptar o serviço — com transporte alternativo, reforço de material adequado ou reorganização de horários — é operacionalmente exigente, mas é isso que se espera de um serviço público essencial financiado pelo erário público.</p>
+<p>Enquanto a resposta padrão continuar a ser "suprimimos e reembolsamos", o risco e o custo real desta gestão continuarão a ser suportados por quem menos tem capacidade de o absorver: o passageiro que precisa de se deslocar e que, apesar de pagar pelo serviço através dos seus impostos, se vê, no momento em que mais precisa dele, sem alternativa.</p><footer class="post-info">
+        <abbr class="published" title="2026-07-05T18:00:00+01:00">
+                Publicado: 05 July 2026
+        </abbr>
+
+        <!--                 <address class="vcard author">
+                        Por:                                 <a class="url fn" href="https://pintasart.github.io/author/pintasart.html">Pintasart</a>
+                </address>
+        -->
+        <p>Em: <a href="https://pintasart.github.io/transportes/">Transportes</a>.</p> 
+<p>tags: <a href="https://pintasart.github.io/tag/critica/">Crítica</a> </p>        
+</footer><!-- /.post-info -->                            </article>
+                        </aside><!-- /#featured -->
+                            <div id="page-wrapper">
+                                <div id="main-content">
+                            <section id="content" class="body">
+                                <h1>Other articles</h1>
+                                <hr />
+                                <ol id="posts-list" class="hfeed">
+
+                        <li><article class="hentry">
+                            <header>
+                                <h1><a href="https://pintasart.github.io/blog/2026/05/10/o-25-de-abril-medido-em-flesch/" rel="bookmark"
+                                       title="Permalink to O 25 de Abril medido em Flesch">O 25 de Abril medido em Flesch</a></h1>
+                            </header>
+
+                            <div class="entry-content">
+<footer class="post-info">
         <abbr class="published" title="2026-05-10T12:00:00+01:00">
                 Publicado: 10 May 2026
         </abbr>
@@ -70,14 +83,10 @@
         -->
         <p>Em: <a href="https://pintasart.github.io/blog/">blog</a>.</p> 
         
-</footer><!-- /.post-info -->                            </article>
-                        </aside><!-- /#featured -->
-                            <div id="page-wrapper">
-                                <div id="main-content">
-                            <section id="content" class="body">
-                                <h1>Other articles</h1>
-                                <hr />
-                                <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                                <p>Acabei de construir uma ferramenta de análise textual. A primeira coisa sensata a fazer era apontá-la aos discursos do 25 de Abril. Os números disseram coisas. O que não disseram foi mais interessante.</p>
+                                <a class="readmore" href="https://pintasart.github.io/blog/2026/05/10/o-25-de-abril-medido-em-flesch/">read more</a>
+                            </div><!-- /.entry-content -->
+                        </article></li>
 
                         <li><article class="hentry">
                             <header>
@@ -210,11 +219,21 @@
                             Nerd <span class="count">(4)</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="https://pintasart.github.io/transportes/">
+                            Transportes <span class="count">(1)</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="widget">
                 <h2>Tags</h2>
                 <ul>
+                    <li>
+                        <a href="https://pintasart.github.io/tag/critica/">
+                            Crítica <span class="count">(1)</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="https://pintasart.github.io/tag/git/">
                             git <span class="count">(1)</span>
